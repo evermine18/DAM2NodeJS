@@ -18,7 +18,7 @@ const host = process.env.HOST || "0.0.0.0"
 const port = process.env.PORT || 3000
 
 // Publish static files from 'public' folder
-app.use(express.static('public'))
+//app.use(express.static('public'))
 
 // Activate HTTP server
 const httpServer = app.listen(port, host, appListen)
