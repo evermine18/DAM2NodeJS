@@ -14,16 +14,15 @@ function wait (ms) {
 const app = express()
 
 // Set port number
-const host = process.env.HOST || "0.0.0.0"
 const port = process.env.PORT || 3000
 
 // Publish static files from 'public' folder
 //app.use(express.static('public'))
 
 // Activate HTTP server
-const httpServer = app.listen(port, host, appListen)
+const httpServer = app.listen(port, appListen)
 function appListen () {
-  console.log(`Listening for HTTP queries on: http://${host}:${port}`)
+  console.log(`Listening for HTTP queries on: http://localhost:${port}`)
 }
 app.post('/checkServer',checkServer)
 async function checkServer (req, res) {
