@@ -1,7 +1,7 @@
 const express = require('express')
 const fs = require('fs/promises')
 const url = require('url')
-const mysql = require('mysql')
+const mysql = require('mysql2')
 const post = require('./post.js')
 const { v4: uuidv4 } = require('uuid')
 
