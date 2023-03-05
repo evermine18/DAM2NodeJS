@@ -31,6 +31,7 @@ async function checkServer (req, res) {
 }
 app.post('/people',getPeople)
 async function getPeople (req, res) {
+  await wait(2000);
   var people = {};
   res.writeHead(200, { 'Content-Type': 'application/json' });
   console.log("si va");
@@ -56,6 +57,7 @@ async function updatePerson (req, res) {
 }
 app.post('/addPerson',addPerson)
 async function addPerson (req, res) {
+  await wait(2000);
   let data = await post.getPostObject(req);
   let status = "KO";
   let userCheck = checkUser(data);
@@ -104,7 +106,7 @@ function containsNumber(str) {
   return /\d/.test(str);
 }
 function checkCity(str) {
-  return /^[A-Za-z]*$/.test(str);
+  return /^[A-Za-zçÇñÑ ]*$/.test(str);
 }
 // Perform a query to the database
 function queryDatabase (query) {
